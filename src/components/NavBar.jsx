@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { DarkContext } from "../context/DarkContext";
 import DarkMode from "./DarkMode";
 
@@ -9,8 +9,8 @@ export const Navbar = () => {
 	const dark = localStorage.getItem("darkMode");
 	const valorINicial = dark == "true" ? true : false;
 	const [darkMode, setDarkMode] = useState(valorINicial);
-
 	const { setIsDark } = useContext(DarkContext);
+	const { pathname } = useLocation();
 
 	const handleDarkMode = () => {
 		setDarkMode(!darkMode);
@@ -65,9 +65,11 @@ export const Navbar = () => {
 					</li>
 				</ul>
 			</div>
-			<div onClick={handleDarkMode} className='darkmode'>
-				<DarkMode darkmode={valorINicial} />
-			</div>
+			{!(pathname === "/") && (
+				<div onClick={handleDarkMode} className='darkmode'>
+					<DarkMode darkmode={valorINicial} />
+				</div>
+			)}
 		</nav>
 	);
 };

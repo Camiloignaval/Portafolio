@@ -1,0 +1,22 @@
+html,
+body {
+	overflow-y: scroll !important;
+}
+
+.title {
+	text-align: center;
+	font: 6rem solid;
+	color: black;
+	margin-top: 4rem;
+	position: absolute;
+}
+
+.iconos img {
+	width: 200px;
+}
+
+.categories {
+	margin-top: 4rem;
+	position: absolute;
+}
+

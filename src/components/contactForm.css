@@ -1,0 +1,66 @@
+.contenedorForm {
+	position: absolute;
+	margin-top: 2rem;
+	display: flex;
+	width: 100vw;
+	/* height: 100vh; */
+	justify-content: space-evenly;
+}
+.card {
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
+}
+.contact-section {
+	padding: 0 1rem;
+}
+
+input.form-control {
+	text-decoration: none;
+	border: 0;
+	outline: none !important;
+	outline-offset: 0 !important;
+	border-bottom: 1px solid rgb(202, 202, 202);
+	background-color: rgb(255, 255, 255);
+	border-radius: 0;
+}
+.form-control:focus {
+	box-shadow: none;
+}
+
+.contact {
+	background-color: #022e57;
+	color: white;
+}
+i {
+	color: #16c79a;
+}
+
+input {
+	background-color: transparent;
+}
+.enviar {
+	position: absolute;
+	right: 4%;
+	bottom: 5%;
+	font-size: 4rem;
+	/* background-color: #fff; */
+	transition: ease font-size 1s;
+}
+.enviar:hover {
+	font-size: 5rem;
+	transition: ease font-size 1s;
+}
+.enviarbtn {
+	border: none;
+}
+
+.error {
+	color: red;
+}
+
+@media (min-width: 992px) {
+	.card {
+		margin-top: 4rem;
+		box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
+		width: 900px;
+	}
+}

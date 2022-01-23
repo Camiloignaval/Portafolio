@@ -1,0 +1,104 @@
+.contenedor {
+	position: absolute;
+	margin-top: 3rem;
+	width: 100vw;
+}
+
+.iconos {
+	width: 100vw !important;
+	justify-content: space-around;
+	padding: 0 10%;
+}
+
+.iconos img {
+	width: 20%;
+	margin: 5px;
+}
+
+.titleSkill {
+	width: 100vw;
+	font-weight: 900;
+	font-size: 3rem;
+	text-align: center;
+	padding-top: 5%;
+	padding-left: 0 !important;
+}
+
+.iconosFront,
+.iconosBack,
+.iconosDDBB {
+	width: 100vw;
+	display: flex;
+	justify-content: space-around;
+	padding: 0 10%;
+	margin: 0;
+}
+
+.iconoFront,
+.iconoBack,
+.iconoDDBB {
+	width: 30%;
+	margin: 1%;
+}
+
+.texto {
+	background-color: rgba(0, 0, 0, 0.548);
+	margin-top: 60%;
+	position: fixed;
+	width: 100vw;
+	height: 15%;
+	z-index: 5;
+	color: white;
+	text-align: center;
+	font-size: 3rem;
+	padding-top: 4%;
+	z-index: -1;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.mostrar {
+	z-index: 99;
+	opacity: 1;
+	transition: all 1s;
+}
+.activo {
+	z-index: 4;
+	filter: drop-shadow(30px 10px 4px #4444444b);
+	transition: ease filter 1.2s;
+}
+
+@media (min-width: 768px) {
+	.iconoFront,
+	.iconoBack,
+	.iconoDDBB {
+		width: 22%;
+		margin: 1%;
+	}
+}
+
+@media (min-width: 992px) {
+	.iconoFront,
+	.iconoBack,
+	.iconoDDBB {
+		width: 15%;
+		margin: 0;
+	}
+	.titleSkill {
+		padding-top: 1%;
+	}
+	.iconosFront,
+	.iconosBack,
+	.iconosDDBB {
+		padding: 1% 10%;
+		margin: 0;
+	}
+	.texto {
+		margin-top: 23%;
+		width: 100vw;
+		height: 15%;
+
+		font-size: 3rem;
+		padding-top: 1.5%;
+	}
+}

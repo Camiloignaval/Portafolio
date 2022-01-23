@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, useEffectLayout } from "react";
 import "./trabajo.css";
 import "animate.css";
+import { DarkContext } from "../context/DarkContext";
 
 export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 	useEffect(() => {
@@ -8,6 +9,17 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 		document.querySelector(".navbar-toggler").classList.add("collapsed");
 		document.querySelector("#navbarNav").classList.remove("show");
 	}, []);
+
+	// darkmode
+
+	const { isDark } = useContext(DarkContext);
+
+	useEffect(() => {
+		const botones = document.querySelectorAll(".btn-group");
+		botones.forEach((i) => {
+			isDark ? i.classList.add("darkMode2") : i.classList.remove("darkMode2");
+		});
+	}, [isDark]);
 
 	const [showInfo, setShowInfo] = useState(false);
 	const handleClickIn = () => {
@@ -47,7 +59,11 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 				></iframe>
 			</div>
 			<div className='btn-group' role='group' aria-label='Basic example'>
-				<a href={git} className='btn btn-dark'>
+				<a
+					href={git}
+					id='repo'
+					className={isDark ? "btn btn-dark" : "btn btn-light"}
+				>
 					<div className='row'>
 						<div className='col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3'>
 							<i className='fab fa-github  mx-auto '></i>
@@ -58,7 +74,12 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 					</div>
 				</a>
 
-				<a href={pagina} type='button' className='btn btn-dark'>
+				<a
+					href={pagina}
+					type='button'
+					id='live'
+					className={isDark ? "btn btn-dark" : "btn btn-light"}
+				>
 					<div className='row'>
 						<div className='col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3'>
 							<i className='far fa-window-restore  mx-auto '></i>
@@ -72,7 +93,8 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 					<a
 						onClick={handleClickIn}
 						type='button'
-						className='btn btn-dark mx-auto'
+						className={isDark ? "btn btn-dark" : "btn btn-light"}
+						id='info'
 					>
 						<div className='row'>
 							<div className='col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3'>
@@ -84,7 +106,12 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 						</div>
 					</a>
 				) : (
-					<a onClick={handleClickOut} type='button' className='btn btn-dark'>
+					<a
+						onClick={handleClickOut}
+						type='button'
+						className={isDark ? "btn btn-dark" : "btn btn-light"}
+						id='info2'
+					>
 						<div className='row'>
 							<div className='col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3'>
 								<i className='fas fa-info-circle'></i>

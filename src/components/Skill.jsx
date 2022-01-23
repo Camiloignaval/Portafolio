@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Skill.css";
 import { gsap } from "gsap";
+import { DarkContext } from "../context/DarkContext";
 
 // import HTML from "../../assets/HTML.png";
 // import CSS from "../../assets/CSS.png";
@@ -19,6 +20,15 @@ export const Skill = () => {
 	const DDBB = ["PostgreSQL", "MySQL"];
 
 	const timeline = gsap.timeline({ defaults: { opacity: 0 } });
+
+	const { isDark } = useContext(DarkContext);
+
+	useEffect(() => {
+		const texto = document.querySelector(".texto");
+		isDark
+			? texto.classList.add("darkMode")
+			: texto.classList.remove("darkMode");
+	}, [isDark]);
 
 	const onEnter = (e) => {
 		setNombreLogo(e.target.alt);
@@ -93,7 +103,7 @@ export const Skill = () => {
 			</p>
 			{/* front */}
 			<h1 className='titleSkill titleFront pl-5 '>FRONTEND</h1>
-			<div className='iconosFront d-flex row'>
+			<div className='iconosFront  d-flex row'>
 				{front.map((logo) => (
 					<img
 						onMouseEnter={onEnter}

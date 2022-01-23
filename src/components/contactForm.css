@@ -6,6 +6,7 @@
 	/* height: 100vh; */
 	justify-content: space-evenly;
 }
+
 .card {
 	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
 }
@@ -47,7 +48,6 @@ input {
 	right: 4%;
 	bottom: 5%;
 	font-size: 4rem;
-	/* background-color: #fff; */
 	transition: ease font-size 1s;
 }
 .enviar:hover {
@@ -62,15 +62,15 @@ input {
 	color: red;
 }
 
+.dark {
+	background-color: rgb(37, 37, 37) !important;
+	color: white !important;
+}
+
 @media (min-width: 992px) {
 	.card {
 		margin-top: 4rem;
 		box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
 		width: 900px;
 	}
-}
-
-.dark {
-	background-color: rgb(37, 37, 37) !important;
-	color: white !important;
 }

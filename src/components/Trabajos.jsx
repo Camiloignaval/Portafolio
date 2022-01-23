@@ -14,14 +14,14 @@ export const Trabajos = () => {
 			pagina: "https://cotizadorcr.netlify.app/",
 		},
 		{
-			nombre: "Cotizador criptomoneda",
+			nombre: "Cotizador criptomoneda2",
 			video: "https://www.youtube.com/embed/NnsSXNEciwY",
 			desc: "Página para cotizar criptomonedas desde distintas monedas del mundo",
 			techs: ["Javascript", "React", "Styled-Components", "Material-UI"],
 			github: "https://github.com/Camiloignaval/cotizadorCriptos",
 		},
 		{
-			nombre: "Cotizador criptomonedas",
+			nombre: "Cotizador criptomonedas3",
 			video: "https://www.youtube.com/embed/NnsSXNEciwY",
 			desc: "Página para cotizar criptomonedas a distintas desde distintas monedas del mundo",
 			techs: ["Javascript", "React", "Styled-Components", "Material-UI"],
@@ -29,7 +29,7 @@ export const Trabajos = () => {
 			pagina: "https://cotizadorcr.netlify.app/",
 		},
 		{
-			nombre: "Cotizador criptomoneda",
+			nombre: "Cotizador criptomoneda4",
 			video: "https://www.youtube.com/embed/NnsSXNEciwY",
 			desc: "Página para cotizar criptomonedas desde distintas monedas del mundo",
 			techs: ["Javascript", "React", "Styled-Components", "Material-UI"],

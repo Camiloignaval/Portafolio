@@ -44,31 +44,17 @@ export const ContactForm = () => {
 		loading && Swal.showLoading();
 	}, [loading]);
 
+	// cambiando clases para modo oscuro
 	useEffect(() => {
-		const card = document.querySelector(".card-body");
-		const name = document.querySelector("#name");
-		const inpMail = document.querySelector("#inpEmail");
-		const inpPhone = document.querySelector("#inpPhone");
-		const inpSubject = document.querySelector("#inpSubject");
-		const inpText = document.querySelector("#inpText");
-		// obtener localstorage
-		console.log(isDark);
-		// const dark = localStorage.getItem("darkMode");
-		if (isDark) {
-			card.classList.add("dark");
-			name.classList.add("dark");
-			inpMail.classList.add("dark");
-			inpPhone.classList.add("dark");
-			inpSubject.classList.add("dark");
-			inpText.classList.add("dark");
-		} else {
-			card.classList.remove("dark");
-			name.classList.remove("dark");
-			inpMail.classList.remove("dark");
-			inpPhone.classList.remove("dark");
-			inpSubject.classList.remove("dark");
-			inpText.classList.remove("dark");
-		}
+		const possibleDarkMode = document.querySelectorAll(".possibleDarkMode");
+
+		isDark
+			? possibleDarkMode.forEach((i) => {
+					i.classList.add("dark");
+			  })
+			: possibleDarkMode.forEach((i) => {
+					i.classList.remove("dark");
+			  });
 	}, [isDark]);
 
 	// animaciones gsap
@@ -126,10 +112,10 @@ export const ContactForm = () => {
 	return (
 		<div className='contenedorForm'>
 			<form onSubmit={handleSubmit(onSubmit)} className='contact-section my-5'>
-				<div className='card'>
+				<div className='card possibleDarkMode'>
 					<div className='row'>
 						<div className='col-lg-8'>
-							<div className='card-body form'>
+							<div className='card-body form possibleDarkMode'>
 								<h3 className='mt-4 titulo'>
 									<i className='fas fa-envelope pr-2 carta'></i>Contáctame:
 								</h3>
@@ -140,7 +126,7 @@ export const ContactForm = () => {
 											<input
 												placeholder='Nombre'
 												type='text'
-												className='form-control'
+												className='form-control possibleDarkMode'
 												name='name'
 												id='name'
 												{...register("name")}
@@ -157,7 +143,7 @@ export const ContactForm = () => {
 												type='text'
 												id='inpEmail'
 												name='email'
-												className='form-control'
+												className='form-control possibleDarkMode'
 												{...register("email")}
 											/>
 
@@ -173,7 +159,7 @@ export const ContactForm = () => {
 												placeholder='Teléfono de contacto'
 												type='text'
 												id='inpPhone'
-												className='form-control'
+												className='form-control possibleDarkMode'
 												name='phone'
 												{...register("phone")}
 											/>
@@ -188,7 +174,7 @@ export const ContactForm = () => {
 												placeholder='Asunto'
 												type='text'
 												id='inpSubject'
-												className='form-control'
+												className='form-control possibleDarkMode'
 												name='subject'
 												{...register("subject")}
 											/>
@@ -205,7 +191,7 @@ export const ContactForm = () => {
 
 											<textarea
 												id='inpText'
-												className='form-control md-textarea'
+												className='form-control md-textarea possibleDarkMode'
 												rows='3'
 												name='text'
 												{...register("text")}

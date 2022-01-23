@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useContext, useEffectLayout } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./trabajo.css";
 import "animate.css";
 import { DarkContext } from "../context/DarkContext";
 
 export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
+	const { isDark } = useContext(DarkContext);
+
 	useEffect(() => {
 		// cerrar nav
 		document.querySelector(".navbar-toggler").classList.add("collapsed");
@@ -12,12 +14,12 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 
 	// darkmode
 
-	const { isDark } = useContext(DarkContext);
-
 	useEffect(() => {
 		const botones = document.querySelectorAll(".btn-group");
 		botones.forEach((i) => {
-			isDark ? i.classList.add("darkMode2") : i.classList.remove("darkMode2");
+			eval(isDark)
+				? i.classList.add("darkMode2")
+				: i.classList.remove("darkMode2");
 		});
 	}, [isDark]);
 
@@ -62,7 +64,7 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 				<a
 					href={git}
 					id='repo'
-					className={isDark ? "btn btn-dark" : "btn btn-light"}
+					className={eval(isDark) ? "btn btn-dark" : "btn btn-light"}
 				>
 					<div className='row'>
 						<div className='col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3'>
@@ -78,7 +80,7 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 					href={pagina}
 					type='button'
 					id='live'
-					className={isDark ? "btn btn-dark" : "btn btn-light"}
+					className={eval(isDark) ? "btn btn-dark" : "btn btn-light"}
 				>
 					<div className='row'>
 						<div className='col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3'>
@@ -93,7 +95,7 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 					<a
 						onClick={handleClickIn}
 						type='button'
-						className={isDark ? "btn btn-dark" : "btn btn-light"}
+						className={eval(isDark) ? "btn btn-dark" : "btn btn-light"}
 						id='info'
 					>
 						<div className='row'>
@@ -109,7 +111,7 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 					<a
 						onClick={handleClickOut}
 						type='button'
-						className={isDark ? "btn btn-dark" : "btn btn-light"}
+						className={eval(isDark) ? "btn btn-dark" : "btn btn-light"}
 						id='info2'
 					>
 						<div className='row'>

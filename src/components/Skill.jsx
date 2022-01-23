@@ -3,15 +3,6 @@ import "./Skill.css";
 import { gsap } from "gsap";
 import { DarkContext } from "../context/DarkContext";
 
-// import HTML from "../../assets/HTML.png";
-// import CSS from "../../assets/CSS.png";
-// import Javascript from "../../assets/Javascript.png";
-// import Bootstrap from "../../assets/Bootstrap.png";
-// import Reac from "../../assets/React.png";
-// import Redux from "../../assets/Redux.png";
-// import Node from "../../assets/Node.png";
-// import PostgreSQL from "../../assets/PostgreSQL.png";
-
 export const Skill = () => {
 	const [nombreLogo, setNombreLogo] = useState("");
 	const nameLogo = useRef();
@@ -25,7 +16,7 @@ export const Skill = () => {
 
 	useEffect(() => {
 		const texto = document.querySelector(".texto");
-		isDark
+		eval(isDark)
 			? texto.classList.add("darkMode")
 			: texto.classList.remove("darkMode");
 	}, [isDark]);

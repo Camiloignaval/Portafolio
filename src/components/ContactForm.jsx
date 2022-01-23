@@ -48,7 +48,7 @@ export const ContactForm = () => {
 	useEffect(() => {
 		const possibleDarkMode = document.querySelectorAll(".possibleDarkMode");
 
-		isDark
+		eval(isDark)
 			? possibleDarkMode.forEach((i) => {
 					i.classList.add("dark");
 			  })

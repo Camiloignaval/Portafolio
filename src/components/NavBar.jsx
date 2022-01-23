@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { DarkContext } from "../context/DarkContext";
+import DarkMode from "./DarkMode";
 
 import "./navbar.css";
 
 export const Navbar = () => {
+	const dark = localStorage.getItem("darkMode");
+	const valorINicial = dark == "true" ? true : false;
+	const [darkMode, setDarkMode] = useState(valorINicial);
+
+	const { setIsDark } = useContext(DarkContext);
+
+	const handleDarkMode = () => {
+		setDarkMode(!darkMode);
+		setIsDark(!darkMode);
+	};
+
+	useEffect(() => {
+		if (darkMode) {
+			document.body.style.backgroundColor = "black";
+			localStorage.setItem("darkMode", true);
+		} else {
+			document.body.style.backgroundColor = "white";
+			localStorage.setItem("darkMode", false);
+		}
+	}, [darkMode]);
+
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark'>
 			<a className='navbar-brand' href='#'></a>
@@ -41,6 +64,9 @@ export const Navbar = () => {
 						</NavLink>
 					</li>
 				</ul>
+			</div>
+			<div onClick={handleDarkMode} className='darkmode'>
+				<DarkMode darkmode={valorINicial} />
 			</div>
 		</nav>
 	);

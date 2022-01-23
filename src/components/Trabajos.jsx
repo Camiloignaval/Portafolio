@@ -1,4 +1,5 @@
 import React from "react";
+import DarkMode from "./DarkMode";
 import { Trabajo } from "./Trabajo";
 import "./trabajos.css";
 
@@ -37,19 +38,21 @@ export const Trabajos = () => {
 	];
 
 	return (
-		<div className='contenedorTrabajos row mx-auto my-auto'>
-			{listaTrabajos.map((tr) => (
-				<div className='trabajo' key={tr.nombre}>
-					<Trabajo
-						nameFoto={tr.nombre}
-						desc={tr.desc}
-						listTech={tr.techs}
-						git={tr.github}
-						video={tr.video}
-						pagina={tr.pagina}
-					/>
-				</div>
-			))}
-		</div>
+		<>
+			<div className='contenedorTrabajos row mx-auto my-auto'>
+				{listaTrabajos.map((tr) => (
+					<div className='trabajo' key={tr.nombre}>
+						<Trabajo
+							nameFoto={tr.nombre}
+							desc={tr.desc}
+							listTech={tr.techs}
+							git={tr.github}
+							video={tr.video}
+							pagina={tr.pagina}
+						/>
+					</div>
+				))}
+			</div>
+		</>
 	);
 };

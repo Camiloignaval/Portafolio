@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./contactForm.css";
 import { init } from "@emailjs/browser";
 init("user_cw684jlcfRffSYZ7foHbM");
@@ -8,6 +8,7 @@ import * as yup from "yup";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import gsap from "gsap/all";
+import { DarkContext } from "../context/DarkContext";
 
 const phoneRegExp = /^(\+?56)?(\s?)(0?9)(\s?)[9876543]\d{7}$/;
 
@@ -25,16 +26,9 @@ const schema = yup.object({
 export const ContactForm = () => {
 	const [loading, setLoading] = useState(false);
 	const [isMobile, setisMobile] = useState(false);
-	// const [showLabel, setShowLabel] = useState({
-	// 	name: false,
-	// 	email: false,
-	// 	phone: false,
-	// 	subject: false,
-	// });
 
-	// const handleClickInput = () => {
-	// 	setShowLabel({ ...showLabel, name: true });
-	// };
+	// tomando desde provider si modo oscuro esta activado o no
+	const { isDark } = useContext(DarkContext);
 
 	// detectar si es mobile para agregar whatsapp
 	const {
@@ -49,6 +43,33 @@ export const ContactForm = () => {
 	useEffect(() => {
 		loading && Swal.showLoading();
 	}, [loading]);
+
+	useEffect(() => {
+		const card = document.querySelector(".card-body");
+		const name = document.querySelector("#name");
+		const inpMail = document.querySelector("#inpEmail");
+		const inpPhone = document.querySelector("#inpPhone");
+		const inpSubject = document.querySelector("#inpSubject");
+		const inpText = document.querySelector("#inpText");
+		// obtener localstorage
+		console.log(isDark);
+		// const dark = localStorage.getItem("darkMode");
+		if (isDark) {
+			card.classList.add("dark");
+			name.classList.add("dark");
+			inpMail.classList.add("dark");
+			inpPhone.classList.add("dark");
+			inpSubject.classList.add("dark");
+			inpText.classList.add("dark");
+		} else {
+			card.classList.remove("dark");
+			name.classList.remove("dark");
+			inpMail.classList.remove("dark");
+			inpPhone.classList.remove("dark");
+			inpSubject.classList.remove("dark");
+			inpText.classList.remove("dark");
+		}
+	}, [isDark]);
 
 	// animaciones gsap
 
@@ -116,17 +137,10 @@ export const ContactForm = () => {
 								<div className='row'>
 									<div className='col-md-6'>
 										<div className='md-form mb-0 inp'>
-											{/* {showLabel.name && (
-												<label htmlFor='inpName' className='form__label'>
-													Nombre
-												</label>
-											)} */}
 											<input
-												// onKeyDown={handleClickInput}
 												placeholder='Nombre'
 												type='text'
-												// id='inpName'
-												className='form-control '
+												className='form-control'
 												name='name'
 												id='name'
 												{...register("name")}
@@ -138,9 +152,6 @@ export const ContactForm = () => {
 
 									<div className='col-md-6 inp'>
 										<div className='md-form mb-0'>
-											{/* <label htmlFor='inpEmail' className='form__label'>
-												Email
-											</label> */}
 											<input
 												placeholder='Email'
 												type='text'
@@ -158,9 +169,6 @@ export const ContactForm = () => {
 								<div className='row'>
 									<div className='col-md-6 inp'>
 										<div className='md-form mb-0'>
-											{/* <label htmlFor='inpPhone' className='form__label'>
-												Telefóno
-											</label> */}
 											<input
 												placeholder='Teléfono de contacto'
 												type='text'
@@ -176,9 +184,6 @@ export const ContactForm = () => {
 
 									<div className='col-md-6 inp'>
 										<div className='md-form mb-0'>
-											{/* <label htmlFor='inpSubject' className='form__label'>
-												Asunto
-											</label> */}
 											<input
 												placeholder='Asunto'
 												type='text'

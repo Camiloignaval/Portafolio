@@ -3,6 +3,7 @@ body {
 	font-family: "Raleway", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	transition: ease all 0.5s;
 }
 
 code {

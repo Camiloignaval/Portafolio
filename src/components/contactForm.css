@@ -9,6 +9,10 @@
 .card {
 	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
 }
+
+.card-body {
+	transition: ease all 1s;
+}
 .contact-section {
 	padding: 0 1rem;
 }
@@ -21,6 +25,7 @@ input.form-control {
 	border-bottom: 1px solid rgb(202, 202, 202);
 	background-color: rgb(255, 255, 255);
 	border-radius: 0;
+	transition: ease all 1s;
 }
 .form-control:focus {
 	box-shadow: none;
@@ -63,4 +68,9 @@ input {
 		box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
 		width: 900px;
 	}
+}
+
+.dark {
+	background-color: rgb(37, 37, 37) !important;
+	color: white !important;
 }

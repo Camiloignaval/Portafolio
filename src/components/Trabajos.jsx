@@ -1,9 +1,11 @@
-import React from "react";
-import DarkMode from "./DarkMode";
+import { gsap } from "gsap";
+import React, { useEffect, useRef } from "react";
 import { Trabajo } from "./Trabajo";
 import "./trabajos.css";
 
 export const Trabajos = () => {
+	const ref = useRef(null);
+
 	const listaTrabajos = [
 		{
 			nombre: "Cotizador criptomonedas",
@@ -36,12 +38,30 @@ export const Trabajos = () => {
 			github: "https://github.com/Camiloignaval/cotizadorCriptos",
 		},
 	];
+	// gsap.registerPlugin(ScrollTrigger);
+	// const trabajos = document.querySelectorAll(".trabajo");
+
+	// const tl = gsap.timeline({
+	// 	scrollTrigger: {
+	// 		trigger: ".trabajo",
+	// 		markers: true,
+	// 		start: "50% top%",
+	// 		end: "end end",
+	// 		scrub: true,
+	// 		toggleActions: "play none none reverse",
+	// 		pin: ".contenedorTrabajos",
+	// 	},
+	// });
+	// tl.from(".trabajo0", {
+	// 	rotation: 360,
+	// 	duration: 2,
+	// });
 
 	return (
 		<>
-			<div className='contenedorTrabajos row mx-auto my-auto'>
-				{listaTrabajos.map((tr) => (
-					<div className='trabajo' key={tr.nombre}>
+			<div ref={ref} className='contenedorTrabajos row mx-auto my-auto'>
+				{listaTrabajos.map((tr, i) => (
+					<div className={`trabajo trabajo${i}`} key={tr.nombre}>
 						<Trabajo
 							nameFoto={tr.nombre}
 							desc={tr.desc}

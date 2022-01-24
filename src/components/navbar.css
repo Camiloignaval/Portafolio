@@ -24,15 +24,18 @@
 
 @media (min-width: 992px) {
 	.darkmode {
-		padding: 1%;
+		display: flex;
 		z-index: 500;
-		right: 2%;
-		text-align: end;
+		bottom: -20%;
+		/* top: 0.5%; */
+		/* padding-top: 2%; */
+		justify-content: center;
 	}
 	.navbar-nav {
 		display: flex;
 		align-content: center;
 		margin: 0rem;
+		padding-left: 5%;
 	}
 	.navbar {
 		background: linear-gradient(270deg, transparent 0%, rgba(0, 0, 0, 1) 100%);

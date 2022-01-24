@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./trabajo.css";
 import "animate.css";
 import { DarkContext } from "../context/DarkContext";
+import Swal from "sweetalert2";
 
 export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 	const { isDark } = useContext(DarkContext);
@@ -25,7 +26,6 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 
 	const [showInfo, setShowInfo] = useState(false);
 	const handleClickIn = () => {
-		// .classList.add("animate__fadeInRightBig");
 		setShowInfo(true);
 	};
 	const handleClickOut = () => {
@@ -35,6 +35,17 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 		setTimeout(() => {
 			setShowInfo(false);
 		}, 500);
+	};
+
+	const handleLiveorNot = () => {
+		pagina === "#" &&
+			Swal.fire({
+				position: "bottom-end",
+				icon: "info",
+				title: "Lo siento, en este momento no esta disponible la página",
+				showConfirmButton: false,
+				timer: 2000,
+			});
 	};
 	return (
 		<div className='card'>
@@ -80,6 +91,7 @@ export const Trabajo = ({ nameFoto, desc, listTech, git, video, pagina }) => {
 					href={pagina}
 					type='button'
 					id='live'
+					onClick={handleLiveorNot}
 					className={eval(isDark) ? "btn btn-dark" : "btn btn-light"}
 				>
 					<div className='row'>

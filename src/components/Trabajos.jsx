@@ -1,9 +1,9 @@
 import { gsap } from "gsap";
-import React, { useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import { Trabajo } from "./Trabajo";
 import "./trabajos.css";
 
-export const Trabajos = () => {
+export const Trabajos = memo(() => {
 	const ref = useRef(null);
 
 	const listaTrabajos = [
@@ -11,31 +11,33 @@ export const Trabajos = () => {
 			nombre: "Cotizador criptomonedas",
 			video: "https://www.youtube.com/embed/NnsSXNEciwY",
 			desc: "Página para cotizar criptomonedas a distintas desde distintas monedas del mundo",
-			techs: ["Javascript", "React", "Styled-Components", "Material-UI"],
+			techs: [
+				"Javascript",
+				"React",
+				"Styled-Components",
+				"Material-UI",
+				"Node",
+				"Express",
+			],
 			github: "https://github.com/Camiloignaval/cotizadorCriptos",
 			pagina: "https://cotizadorcr.netlify.app/",
 		},
 		{
-			nombre: "Cotizador criptomoneda2",
-			video: "https://www.youtube.com/embed/NnsSXNEciwY",
-			desc: "Página para cotizar criptomonedas desde distintas monedas del mundo",
-			techs: ["Javascript", "React", "Styled-Components", "Material-UI"],
-			github: "https://github.com/Camiloignaval/cotizadorCriptos",
+			nombre: "Calendario y notas",
+			video: "https://www.youtube.com/embed/Ul4e9-LnPK4",
+			desc: "Página para guardar notas y recordatorios entre un equipo",
+			techs: ["Javascript", "React", "Redux", "MongoDB", "Node", "Express"],
+			github: "https://github.com/Camiloignaval/mern-calendar-backend",
+			pagina: "https://mern-calendar-git.herokuapp.com/",
 		},
 		{
-			nombre: "Cotizador criptomonedas3",
-			video: "https://www.youtube.com/embed/NnsSXNEciwY",
-			desc: "Página para cotizar criptomonedas a distintas desde distintas monedas del mundo",
-			techs: ["Javascript", "React", "Styled-Components", "Material-UI"],
-			github: "https://github.com/Camiloignaval/cotizadorCriptos",
-			pagina: "https://cotizadorcr.netlify.app/",
-		},
-		{
-			nombre: "Cotizador criptomoneda4",
-			video: "https://www.youtube.com/embed/NnsSXNEciwY",
-			desc: "Página para cotizar criptomonedas desde distintas monedas del mundo",
-			techs: ["Javascript", "React", "Styled-Components", "Material-UI"],
-			github: "https://github.com/Camiloignaval/cotizadorCriptos",
+			nombre: "Aplicación pequeños y medianos gimnasios",
+			video: "https://www.youtube.com/embed/p_A2GHfy6Bg",
+			desc: "EN PROCESO... Aplicación web para el orden en pequeños y medianos gimnasios",
+			techs: ["Javascript", "React", "Redux", "PostgreSQL", "Node", "Express"],
+			github:
+				"https://github.com/Camiloignaval/proyectoTituloFront/tree/main/frontGym",
+			pagina: "#",
 		},
 	];
 	// gsap.registerPlugin(ScrollTrigger);
@@ -75,4 +77,4 @@ export const Trabajos = () => {
 			</div>
 		</>
 	);
-};
+});

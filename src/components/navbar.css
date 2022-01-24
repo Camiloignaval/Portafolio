@@ -26,9 +26,6 @@
 	.darkmode {
 		display: flex;
 		z-index: 500;
-		bottom: -20%;
-		/* top: 0.5%; */
-		/* padding-top: 2%; */
 		justify-content: center;
 	}
 	.navbar-nav {
@@ -126,7 +123,7 @@
 		-webkit-tap-highlight-color: transparent;
 		padding: 10px;
 		white-space: nowrap;
-		overflow: hidden;
+		/* overflow: hidden; */
 	}
 
 	span {

@@ -1,16 +1,11 @@
 .contenedorTrabajos {
-	position: absolute;
+	position: relative;
 	display: flex;
-
 	color: white;
-	height: 100vh;
+	height: 100%;
 	width: 100vw;
-	/* background-color: white; */
 	justify-content: space-evenly;
-	/* margin: 20% 10%; */
-	padding-top: 10%;
-	/* padding: 10%; */
-	/* overflow-y: scroll !important; */
+	padding-top: 5%;
 }
 
 .trabajo {

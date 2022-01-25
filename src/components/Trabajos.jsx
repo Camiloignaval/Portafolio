@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, useRef } from "react";
 import { Trabajo } from "./Trabajo";
 import "./trabajos.css";
 
@@ -40,6 +40,7 @@ export const Trabajos = memo(() => {
 			pagina: "#",
 		},
 	];
+
 	// gsap.registerPlugin(ScrollTrigger);
 	// const trabajos = document.querySelectorAll(".trabajo");
 

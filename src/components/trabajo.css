@@ -50,14 +50,16 @@
 	background-color: black;
 }
 
-.btn-group a {
+.btn-group a,
+.btnVideo {
 	display: flex;
 	font-size: 0.7em;
 	flex-direction: column;
 	padding-bottom: 0;
 }
 
-.btn-group a i {
+.btn-group a i,
+.btnVideo i {
 	font-size: 1.3em;
 }
 

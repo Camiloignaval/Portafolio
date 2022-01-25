@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import gsap from "gsap/all";
 import { DarkContext } from "../context/DarkContext";
 
+
 const phoneRegExp = /^(\+?56)?(\s?)(0?9)(\s?)[9876543]\d{7}$/;
 
 const schema = yup.object({

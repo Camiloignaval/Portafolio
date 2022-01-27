@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import "./skills.css";
-import { Skill } from "./Skill.jsx";
+import React, { useEffect } from 'react'
+import './skills.css'
+import { Skill } from './Skill.jsx'
 
 export const Skills = () => {
-	useEffect(() => {}, []);
+  useEffect(() => {}, [])
 
-	return (
-		<>
-			<Skill />
-		</>
-	);
-};
+  return (
+    <>
+      <Skill />
+    </>
+  )
+}

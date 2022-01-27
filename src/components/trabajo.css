@@ -50,15 +50,14 @@
 	background-color: black;
 }
 
-.btn-group a,
 .btnVideo {
 	display: flex;
 	font-size: 0.7em;
 	flex-direction: column;
 	padding-bottom: 0;
+	text-align: center;
 }
 
-.btn-group a i,
 .btnVideo i {
 	font-size: 1.3em;
 }
@@ -67,7 +66,7 @@
 	.informacion {
 		font-size: 1em;
 	}
-	.btn-group a {
+	.btnVideo {
 		display: flex;
 		font-size: 0.8em;
 		/* flex-direction: row; */
@@ -76,13 +75,14 @@
 	}
 	.btn-group a i {
 		font-size: 1.9em;
+		margin: auto;
 	}
 }
 @media (min-width: 768px) {
 	.informacion {
-		font-size: 1.2em;
+		font-size: 1.5em;
 	}
-	.btn-group a {
+	.btnVideo {
 		font-size: 1em;
 	}
 }

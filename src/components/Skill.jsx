@@ -13,12 +13,11 @@ export const Skill = () => {
     "Bootstrap",
     "React",
     "Redux",
-    "TypeScript",
     "NextJs",
   ];
   const back = ["Node", "Amazon Web Services"];
   const DDBB = ["PostgreSQL", "MySQL", "MongoDB"];
-  const Otros = ["Docker"];
+  const Otros = ["Docker", "TypeScript"];
 
   const timeline = gsap.timeline({ defaults: { opacity: 0 } });
 
